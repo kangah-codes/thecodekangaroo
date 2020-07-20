@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+    {% block title %}The Code Kangaroo{% endblock %}
+
+    {% block extrahead %}
+        <link rel="icon" href="{% static 'website/img/core-img/favicon.png' %}" sizes="48x48" sizes="48x48" />
+    {% endblock %}
+    {% block branding %}
+        <h1 id="site-name"><a href="{% url 'admin:index' %}">The Code Kangaroo</a></h1>
+{% endblock %}
