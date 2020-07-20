@@ -20,7 +20,11 @@ def index(request):
     return render(request, 'index.html', context)
 
 def tags(request):
-    return render(request, 'index2.html')
+    context = {
+        "tags": Tag.objects.all()
+    }
+    print(context.get('tags'))
+    return render(request, 'tags.html', context)
 
 def author(request):
     return render(request, 'author.html')

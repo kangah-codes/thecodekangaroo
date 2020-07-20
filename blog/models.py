@@ -21,7 +21,10 @@ BLOG_COLORS = (
 )
 
 class Tag(models.Model):
-    text = models.CharField(max_length=50)
+    text = models.CharField(max_length=50, unique=True)
+    description = models.TextField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
+    color = models.CharField(choices=BLOG_COLORS, blank=True, null=True, max_length=10)
 
     def __str__(self):
         return self.text

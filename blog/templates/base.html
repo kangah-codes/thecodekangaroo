@@ -67,7 +67,7 @@
                     <header class="header-wrap flex">
                         <div class="header-logo">
                             <h1 class="is-logo">
-                                <a href="index.htm"><img src="{% static 'img/logo-white.png' %}" alt="TheCodeKangaroo" id="site-logo" /></a>
+                                <a href="{% url 'index' %}"><img src="{% static 'img/logo-white.png' %}" alt="TheCodeKangaroo" id="site-logo" /></a>
                             </h1>
                         </div>
                         <div class="header-nav">
@@ -81,19 +81,19 @@
                                 <ul class="nav-list">
                                     <li class="nav-list-item">
                                         <a href="{% url 'index' %}" class="nav-link">Home</a>
-                                        <span class="nav-dot nav-dot-current"></span>
+                                        <span class="nav-dot {%block homeactive%}{%endblock%}"></span>
                                     </li>
                                     <li class="nav-list-item">
-                                        <a href="tags.html" class="nav-link">Tags</a>
-                                        <span class="nav-dot"></span>
+                                        <a href="{% url 'tags' %}" class="nav-link">Tags</a>
+                                        <span class="nav-dot {%block tagactive%}{%endblock%}"></span>
                                     </li>
                                     <li class="nav-list-item">
-                                        <a href="authors.html" class="nav-link">Author</a>
-                                        <span class="nav-dot"></span>
+                                        <a href="{% url 'author' %}" class="nav-link">Author</a>
+                                        <span class="nav-dot {%block authactive%}{%endblock%}"></span>
                                     </li>
                                     <li class="nav-list-item">
                                         <a href="about.html" class="nav-link">About</a>
-                                        <span class="nav-dot"></span>
+                                        <span class="nav-dot {%block about%}{%endblock%}"></span>
                                     </li>
                                     <li class="nav-list-item">
                                         <a href="#" class="nav-link" onclick="changeTheme()">Theme</a>
@@ -157,7 +157,7 @@
                         <ul class="nav-list">
                             <li class="nav-list-item">
                                 <a href="index.htm" class="nav-link">Home</a>
-                                <span class="nav-dot nav-dot-current"></span>
+                                <span class="nav-dot"></span>
                             </li>
                             <li class="nav-list-item">
                                 <a href="tags.html" class="nav-link">Tags</a>
@@ -282,8 +282,8 @@
                     backDelay: 5000,
                 });
             }
-            
-            function changeLogo() {
+
+            function changeLogo(){
                 var element = document.body;
                 if (element.classList.contains("global-hash-dark-version")){
                     document.getElementById('site-logo').src = "{% static 'img/logo-white.png' %}"
@@ -299,6 +299,10 @@
                 element.classList.toggle("global-hash-dark-version");
                 changeLogo()
             }
+
+           
+            
+
         </script>
     </body>
 </html>
