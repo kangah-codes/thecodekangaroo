@@ -4,70 +4,24 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Nurui</title>
-        <meta name="HandheldFriendly" content="True" />
-        <meta name="MobileOptimized" content="320" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% block title %}
+        {% endblock %}
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap&subset=latin-ext" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
-        <meta name="description" content="Thoughts, stories and ideas" />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-        <link rel="canonical" href="index.htm" />
-        <meta name="referrer" content="no-referrer-when-downgrade" />
-        <link rel="next" href="page\2\index.htm" />
-
-        <meta property="og:site_name" content="Nurui" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Nurui" />
-        <meta property="og:description" content="Thoughts, stories and ideas" />
-        <meta property="og:url" content="https://nurui-dark.fueko.net/" />
-        <meta property="og:image" content="https://nurui-dark.fueko.net/content/images/2018/12/alisher-sharip-117976-unsplash.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Nurui" />
-        <meta name="twitter:description" content="Thoughts, stories and ideas" />
-        <meta name="twitter:url" content="https://nurui-dark.fueko.net/" />
-        <meta name="twitter:image" content="https://nurui-dark.fueko.net/content/images/2018/12/alisher-sharip-117976-unsplash.jpg" />
-        <meta name="twitter:site" content="@fuekothemes" />
-        <meta property="og:image:width" content="720" />
-        <meta property="og:image:height" content="1080" />
-
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "Nurui",
-                    "logo": "https://nurui-dark.fueko.net/content/images/2019/09/nurui.svg"
-                },
-                "url": "https://nurui-dark.fueko.net/",
-                "image": {
-                    "@type": "ImageObject",
-                    "url": "https://nurui-dark.fueko.net/content/images/2018/12/alisher-sharip-117976-unsplash.jpg",
-                    "width": 720,
-                    "height": 1080
-                },
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "https://nurui-dark.fueko.net/"
-                },
-                "description": "Thoughts, stories and ideas"
-            }
-        </script>
-
-        <meta name="generator" content="Ghost 2.31" />
-        <link rel="alternate" type="application/rss+xml" title="Nurui" href="rss\index.xml" />
     </head>
     <body
-        class="home-template global-hash-blue global-hash-dark-version global-hash-details-goldenrod global-hash-full-image global-hash-green global-hash-large global-hash-orange global-hash-post-orange global-hash-post-violet global-hash-red global-hash-violet global-hash-yellow"
+        class="home-template global-hash-blue  global-hash-details-goldenrod global-hash-full-image global-hash-green global-hash-large global-hash-orange global-hash-post-orange global-hash-post-violet global-hash-red global-hash-violet global-hash-yellow"
     >
+        <div id="preloader">
+            <img src="{% static 'img/favicon-dark.png' %}" alt="" class="blink" style="width: 100px" class="blink">
+        </div>
         <div class="global-wrap">
             <div class="section-content-wrap">
                 <div class="section-header wrap">
                     <header class="header-wrap flex">
                         <div class="header-logo">
                             <h1 class="is-logo">
-                                <a href="{% url 'index' %}"><img src="{% static 'img/logo-white.png' %}" alt="TheCodeKangaroo" id="site-logo" /></a>
+                                <a href="{% url 'index' %}"><img src="{% static 'img/logo-dark.png' %}" alt="TheCodeKangaroo" class="site-logo" /></a>
                             </h1>
                         </div>
                         <div class="header-nav">
@@ -91,14 +45,14 @@
                                         <a href="{% url 'author' %}" class="nav-link">Author</a>
                                         <span class="nav-dot {%block authactive%}{%endblock%}"></span>
                                     </li>
-                                    <li class="nav-list-item">
-                                        <a href="about.html" class="nav-link">About</a>
-                                        <span class="nav-dot {%block about%}{%endblock%}"></span>
-                                    </li>
-                                    <li class="nav-list-item">
-                                        <a href="#" class="nav-link" onclick="changeTheme()">Theme</a>
+                                    <li class="nav-list-item theme-toggle">
+                                        <a href="#" class="nav-link" onclick="changeTheme()" id="theme-icon">
+                                            <svg width="21px" height="21px" viewBox="0 0 16 16" class="bi bi-sun" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M3.5 8a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0z"/>
+                                              <path fill-rule="evenodd" d="M8.202.28a.25.25 0 0 0-.404 0l-.91 1.255a.25.25 0 0 1-.334.067L5.232.79a.25.25 0 0 0-.374.155l-.36 1.508a.25.25 0 0 1-.282.19l-1.532-.245a.25.25 0 0 0-.286.286l.244 1.532a.25.25 0 0 1-.189.282l-1.509.36a.25.25 0 0 0-.154.374l.812 1.322a.25.25 0 0 1-.067.333l-1.256.91a.25.25 0 0 0 0 .405l1.256.91a.25.25 0 0 1 .067.334L.79 10.768a.25.25 0 0 0 .154.374l1.51.36a.25.25 0 0 1 .188.282l-.244 1.532a.25.25 0 0 0 .286.286l1.532-.244a.25.25 0 0 1 .282.189l.36 1.508a.25.25 0 0 0 .374.155l1.322-.812a.25.25 0 0 1 .333.067l.91 1.256a.25.25 0 0 0 .405 0l.91-1.256a.25.25 0 0 1 .334-.067l1.322.812a.25.25 0 0 0 .374-.155l.36-1.508a.25.25 0 0 1 .282-.19l1.532.245a.25.25 0 0 0 .286-.286l-.244-1.532a.25.25 0 0 1 .189-.282l1.508-.36a.25.25 0 0 0 .155-.374l-.812-1.322a.25.25 0 0 1 .067-.333l1.256-.91a.25.25 0 0 0 0-.405l-1.256-.91a.25.25 0 0 1-.067-.334l.812-1.322a.25.25 0 0 0-.155-.374l-1.508-.36a.25.25 0 0 1-.19-.282l.245-1.532a.25.25 0 0 0-.286-.286l-1.532.244a.25.25 0 0 1-.282-.189l-.36-1.508a.25.25 0 0 0-.374-.155l-1.322.812a.25.25 0 0 1-.333-.067L8.203.28zM8 2.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z"/>
+                                            </svg>
+                                        </a>
                                         <span class="nav-dot"></span>
-                                    </li>
 
                                     <li class="nav-list-item search-open">
                                         <span>Search</span>
@@ -111,7 +65,7 @@
                                 </ul>
                             </nav>
                         </div>
-                        <div class="blog-description flex">Thoughts, stories and ideas</div>
+                        <div class="blog-description flex">Thoughts, stories and ideas of a lone coder.</div>
                     </header>
                 </div>
                 {% block content %}
@@ -121,58 +75,49 @@
                         <h3>Join our occasional newsletter</h3>
                         <div class="ityped">
                             <span class="ityped-wrap"></span>
+                            <span class="ityped-sub" style="display: none;"></span>
                         </div>
-                        <form method="post" action="/subscribe/" class="">
-                            <input class="confirm" type="hidden" name="confirm" /><input class="location" type="hidden" name="location" /><input class="referrer" type="hidden" name="referrer" />
-                            <div class="form-group">
-                                <input class="subscribe-email" type="email" name="email" placeholder="Your email address" id="subscribe-input" />
-                            </div>
-                            <button class="" type="submit"><span>Subscribe</span></button>
+                        <input class="confirm" type="hidden" name="confirm" /><input class="location" type="hidden" name="location" /><input class="referrer" type="hidden" name="referrer" />
+                        <div class="form-group">
+                            <input class="subscribe-email" type="email" name="email" placeholder="Your email address" id="subscribe-input" />
+                        </div>
+                        <button class="subscribe-click"><span>Subscribe</span></button>
 
-                            <script>
-                                (function (g, h, o, s, t) {
-                                    var buster = function (b, m) {
-                                        h[o]("input." + b).forEach(function (i) {
-                                            i.value = i.value || m;
-                                        });
-                                    };
-                                    buster("location", g.location.href);
-                                    buster("referrer", h.referrer);
-                                })(window, document, "querySelectorAll", "value");
-                            </script>
+                        <script>
+                            (function (g, h, o, s, t) {
+                                var buster = function (b, m) {
+                                    h[o]("input." + b).forEach(function (i) {
+                                        i.value = i.value || m;
+                                    });
+                                };
+                                buster("location", g.location.href);
+                                buster("referrer", h.referrer);
+                            })(window, document, "querySelectorAll", "value");
+                        </script>
 
-                            <script>
-                                document.getElementById("subscribe-input").setAttribute("aria-label", "Your email address");
-                            </script>
-                        </form>
+                        <script>
+                            document.getElementById("subscribe-input").setAttribute("aria-label", "Your email address");
+                        </script>
                     </div>
                 </div>
             </div>
             <footer class="section-footer">
                 <div class="footer-wrap wrap flex">
                     <div class="footer-logo flex">
-                        <a class="is-logo" href="index.htm"><img src="static/img/logo.png" alt="Nurui" /></a>
+                        <a class="is-logo" href="index.htm"><img src="{% static 'img/logo-dark.png' %}" alt="TheCodeKangaroo" class="site-logo" /></a>
                     </div>
                     <div class="footer-nav">
                         <ul class="nav-list">
                             <li class="nav-list-item">
-                                <a href="index.htm" class="nav-link">Home</a>
+                                <a href="{% url 'index' %}" class="nav-link">Home</a>
                                 <span class="nav-dot"></span>
                             </li>
                             <li class="nav-list-item">
-                                <a href="tags.html" class="nav-link">Tags</a>
+                                <a href="{% url 'tags' %}" class="nav-link">Tags</a>
                                 <span class="nav-dot"></span>
                             </li>
                             <li class="nav-list-item">
-                                <a href="style-guide\index.htm" class="nav-link">About</a>
-                                <span class="nav-dot"></span>
-                            </li>
-                            <li class="nav-list-item">
-                                <a href="authors\index.htm" class="nav-link">Authors</a>
-                                <span class="nav-dot"></span>
-                            </li>
-                            <li class="nav-list-item">
-                                <a href="contact\index.htm" class="nav-link">Contact</a>
+                                <a href="{% url 'author' %}" class="nav-link">Authors</a>
                                 <span class="nav-dot"></span>
                             </li>
                         </ul>
@@ -203,7 +148,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="footer-copyright">&copy; 2020 <a href="index.htm">Nurui</a>. All Right Reserved. Published with <a href="https://ghost.org">Ghost</a>.</div>
+                <div class="footer-copyright">2020 The Code Kangaroo.</div>
             </footer>
         </div>
         <div class="section-search flex" id="search">
@@ -214,95 +159,40 @@
                     ></path>
                 </svg>
             </div>
-            <div class="search-image" style="background-image: url(content/images/2018/12/alisher-sharip-117976-unsplash.jpg);"></div>
             <div class="search-wrap">
                 <div class="search-content">
-                    <form class="search-form flex" onsubmit="return false">
-                        <input type="text" class="search-input" placeholder="Type your keywords..." aria-label="Type your keywords..." />
-                    </form>
+                    <input type="text" class="search-input" placeholder="Type your keywords..." aria-label="Type your keywords..." />
                     <div class="search-meta">
-                        <span class="search-info-wrap">Please enter at least 3 characters</span>
-                        <span class="search-counter-wrap hide">
-                            <span class="counter-results">0</span>
-                            Results for your search
+                        <span class="search-info-wrap" id="search-inf">Please enter at least 3 characters</span>
+                        <span class="search-counter-wrap hide" id="search-counter">
+                            
                         </span>
                     </div>
-                    <div class="search-results"></div>
+                    <div class="search-results">
+                        
+                    </div>
                     <div class="search-suggestion flex">
                         <div class="search-suggestion-tags">
                             <h3>May we suggest a tag?</h3>
-                            <a class="post-tag global-tag" href="tag\story\index.htm">Story</a>
-                            <a class="post-tag global-tag" href="tag\people\index.htm">People</a>
-                            <a class="post-tag global-tag" href="tag\education\index.htm">Education</a>
-                            <a class="post-tag global-tag" href="tag\journey\index.htm">Journey</a>
-                            <a class="post-tag global-tag" href="tag\architecture\index.htm">Architecture</a>
-                            <a class="post-tag global-tag" href="tag\lifestyle\index.htm">Lifestyle</a>
-                            <a class="post-tag global-tag" href="tag\design\index.htm">Design</a>
-                            <a class="post-tag global-tag" href="tag\nature\index.htm">Nature</a>
-                            <a class="post-tag global-tag" href="tag\culture\index.htm">Culture</a>
-                        </div>
-                        <div class="search-suggestion-authors">
-                            <h3>May we suggest an author?</h3>
-                            <a class="post-tag global-tag" href="author\patricia\index.htm">Patricia Jenkins</a>
-                            <a class="post-tag global-tag" href="author\james\index.htm">James Bryant</a>
-                            <a class="post-tag global-tag" href="author\margaret\index.htm">Margaret Robertson</a>
-                            <a class="post-tag global-tag" href="author\janet\index.htm">Janet Robertson</a>
-                            <a class="post-tag global-tag" href="author\sean\index.htm">Sean Hamilton</a>
-                            <a class="post-tag global-tag" href="author\marcos\index.htm">Marcos Duran</a>
+                            {% for tag in tags %}
+                                <a class="post-tag global-tag" href="{% url 'tag_posts' tag.text %}">{{ tag.text }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
                 <div class="search-footer">
                     <a href="index.htm">Nurui.</a>
-                    <span>Thoughts, stories and ideas.</span>
+                    <span>Thoughts, stories and ideas of a lone coder..</span>
                 </div>
             </div>
         </div>
-        <script>
-            var searchPublished = "Published",
-                searchFeaturedIcon =
-                    '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.9712403,8.05987765 L16.2291373,8.05987765 L12.796794,0.459688839 C12.5516266,-0.153229613 11.4483734,-0.153229613 11.0806223,0.459688839 L7.64827899,8.05987765 L0.906176009,8.05987765 C0.538424938,8.05987765 0.170673866,8.30504503 0.0480901758,8.6727961 C-0.0744935148,9.04054717 0.0480901758,9.40829825 0.293257557,9.65346563 L5.31918887,14.3116459 L3.11268244,22.4021694 C2.99009875,22.7699205 3.11268244,23.1376716 3.48043351,23.382839 C3.72560089,23.6280063 4.21593565,23.6280063 4.46110303,23.5054227 L11.9387082,19.2149935 L19.4163133,23.5054227 C19.538897,23.6280063 19.6614807,23.6280063 19.906648,23.6280063 C20.1518154,23.6280063 20.2743991,23.5054227 20.5195665,23.382839 C20.7647339,23.1376716 20.8873176,22.7699205 20.8873176,22.4021694 L18.6808111,14.3116459 L23.7067424,9.65346563 C23.9519098,9.40829825 24.0744935,9.04054717 23.9519098,8.6727961 C23.7067424,8.30504503 23.3389914,8.05987765 22.9712403,8.05987765 Z"/></svg>',
-                searchHost = "https://nurui-dark.fueko.net",
-                searchKey = "8ccf81de5d546af981f6ed7672",
-                searchAPI = searchHost + "/ghost/api/v2/content/posts/?key=" + searchKey + "&limit=all&formats=plaintext&fields=url,title,plaintext,featured,published_at";
-        </script>
-        <script>
-            var numberPage = 3;
-        </script>
-        <script src="static/js/index.js"></script>
-        <script src="static/js/global.js"></script>
-        <script>
-            var subscribe = document.getElementById("subscribe");
-            if (subscribe) {
-                ityped.init(document.querySelector(".ityped-wrap"), {
-                    strings: ["Start your day with <thecodekangaroo/>", "No spam ever, we promise!", "Get notified when we post"],
-                    showCursor: true,
-                    typeSpeed: 150,
-                    startDelay: 500,
-                    backDelay: 5000,
-                });
-            }
-
-            function changeLogo(){
-                var element = document.body;
-                if (element.classList.contains("global-hash-dark-version")){
-                    document.getElementById('site-logo').src = "{% static 'img/logo-white.png' %}"
-                }else{
-                    document.getElementById('site-logo').src = "{% static 'img/logo-dark.png' %}"
-                }
-            }
-
-            changeLogo();
-
-            function changeTheme() {
-                var element = document.body;
-                element.classList.toggle("global-hash-dark-version");
-                changeLogo()
-            }
-
-           
-            
-
-        </script>
+        <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+        <script src="{% static 'js/index.js' %}"></script>
+        <script src="{% static 'js/global.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+        <script src="{% static 'js/search.js' %}"></script>
     </body>
 </html>

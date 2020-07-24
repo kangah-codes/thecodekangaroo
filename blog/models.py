@@ -58,7 +58,7 @@ class BlogPost(models.Model):
         return f"/blog/post/{self.slug}"
 
 class Newsletter(models.Model):
-    email = models.CharField(max_length=100)
+    email = models.CharField(max_length=100, unique=True)
     
     def __str__(self):
         return f"User {self.email}"

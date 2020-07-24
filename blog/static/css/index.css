@@ -3705,3 +3705,48 @@ iframe {
 .tag-hash-post-blue .no-featured-image {
     background-image: linear-gradient(40deg, var(--gradient-blue-start), var(--gradient-blue-end));
 }
+
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  background-color: #f6f9f9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden; }
+
+@keyframes blink {
+  0% { opacity: 0; }
+  100% { opacity: 1 }
+}
+@-webkit-keyframes blink {
+  0% { opacity: 0; }
+  100% { opacity: 1 }
+}
+.blink {
+  -webkit-animation: blink 1s linear infinite;
+  -moz-animation: blink 1s linear infinite;
+  animation: blink 1s linear infinite;
+}
+
+.theme-toggle {
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+}
+.theme-toggle svg {
+    width: 21px;
+    height: 21px;
+    margin: 0 0 -5px 5px;
+    list-style: none;
+}

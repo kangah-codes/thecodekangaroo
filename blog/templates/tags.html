@@ -15,14 +15,14 @@
             {% for tag in tags %}
                 {% if tag.description %}
                     <div class="page-tag-wrap top is-image" {%if not tag.image%}style="background-image: linear-gradient(45deg,var(--gradient-{{tag.color}}-start),var(--gradient-{{tag.color}}-end))"{%endif%}>
-                        <a href="..\tag\story\index.htm" class="item-link-overlay"></a>
+                        <a href="{% url 'tag_posts' tag.text %}" class="item-link-overlay"></a>
                         {% if tag.image %}
                             <div
                                 class="page-tag-image"
                                 style="background-image: url({{tag.image.url}});"
                             ></div>
                         {% endif %}
-                        <h2><a href="..\tag\story\index.htm">{{ tag.text }}</a></h2>
+                        <h2><a href="{% url 'tag_posts' tag.text %}">{{ tag.text }}</a></h2>
                         <p>
                             {{ tag.description }}
                         </p>
@@ -35,16 +35,20 @@
             {% for tag in tags %}
                 {% if not tag.description %}
                     <div class="page-tag-wrap other is-image" {%if not tag.image%}style="background-image: linear-gradient(45deg,var(--gradient-{{tag.color}}-start),var(--gradient-{{tag.color}}-end))"{%endif%}>
-                        <a href="..\tag\journey\index.htm" class="item-link-overlay"></a>
+                        <a href="{% url 'tag_posts' tag.text %}" class="item-link-overlay"></a>
                         {% if tag.image %}
                             <div
                                 class="page-tag-image"
                                 style="background-image: url({{tag.image.url}});"
                             ></div>
                         {% endif %}
-                        <h2><a href="..\tag\journey\index.htm">{{ tag.text }}</a></h2>
+                        <h2><a href="{% url 'tag_posts' tag.text %}">{{ tag.text }}</a></h2>
                     </div>
                 {% endif %}
+            {% empty %}
+                <div class="page-tags-title">
+                    <h4>No tags yet<h4>
+                </div>
             {% endfor %}
         </div>
     </div>
