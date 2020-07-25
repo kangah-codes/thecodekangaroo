@@ -81,17 +81,13 @@ WSGI_APPLICATION = 'thecodekangaroo_django.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
-    #     'PORT': '5432',
-    #     'NAME': 'dc7cd0ddprv5mi',
-    #     'USER': 'gicxrcblyllfjp',
-    #     'PASSWORD': 'caaf0441f89e675106e05520561e95a4c125315ee2e5aa305fef450d747510c1',
-    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'NAME': 'dc7cd0ddprv5mi',
+        'USER': 'gicxrcblyllfjp',
+        'PASSWORD': 'caaf0441f89e675106e05520561e95a4c125315ee2e5aa305fef450d747510c1',
     }
 }
 
