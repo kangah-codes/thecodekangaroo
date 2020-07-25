@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -81,8 +82,12 @@ WSGI_APPLICATION = 'thecodekangaroo_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'NAME': 'dc7cd0ddprv5mi',
+        'USER': 'gicxrcblyllfjp',
+        'PASSWORD': 'caaf0441f89e675106e05520561e95a4c125315ee2e5aa305fef450d747510c1',
     }
 }
 
@@ -122,6 +127,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -132,6 +139,24 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# DEFAULT_FILE_STORAGE = 'gcloud.GoogleCloudMediaFileStorage'
+# STATICFILES_STORAGE = 'gcloud.GoogleCloudStaticFileStorage'
+
+# GS_PROJECT_ID = 'PROJECT ID FOUND IN GOOGLE CLOUD'
+# GS_STATIC_BUCKET_NAME = 'NAME OF THE STATIC BUCKET CREATED IN CLOUD STORAGE'
+# GS_MEDIA_BUCKET_NAME = 'NAME OF THE MEDIA BUCKET CREATED IN CLOUD STORAGE'  # same as STATIC BUCKET if using single bucket both for static and media
+
+# STATIC_URL = 'https://storage.googleapis.com/{}/'.format(GS_STATIC_BUCKET_NAME)
+# STATIC_ROOT = "static/"
+
+# MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_MEDIA_BUCKET_NAME)
+# MEDIA_ROOT = "media/"
+
+# UPLOAD_ROOT = 'media/uploads/'
+
+# DOWNLOAD_ROOT = os.path.join(BASE_DIR, "static/media/downloads")
+# DOWNLOAD_URL = STATIC_URL + "media/downloads"
 
 # Caching
 CACHES = {

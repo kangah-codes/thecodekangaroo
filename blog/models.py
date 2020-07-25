@@ -32,9 +32,9 @@ class Tag(models.Model):
 class BlogPost(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
-    post_date = models.DateField(auto_now_add=True)
+    post_date = models.DateField()
     last_modified = models.DateField(auto_now_add=True)
-    banner = models.ImageField(null=True, blank=True)
+    banner = models.TextField(null=True, blank=True)
     is_large = models.BooleanField()
     color = models.CharField(choices=BLOG_COLORS, max_length=10)
     status = models.CharField(choices=BLOG_STATUS, max_length=10)

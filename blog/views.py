@@ -18,10 +18,13 @@ def index(request):
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+    for post in posts:
+        print(post.banner)
     context = {
         "posts": page_obj,
         "featured": featured,
-        "tags": Tag.objects.all()
+        "tags": Tag.objects.all(),
+        "ban": posts[0].banner
     }
     return render(request, 'index.html', context)
 
