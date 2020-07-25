@@ -22,7 +22,6 @@ if (subscribe) {
 
 function changeLogo(){
     var imgs = document.getElementsByClassName('site-logo')
-    console.log(imgs.length)
     var element = document.body;
     if (element.classList.contains("global-hash-dark-version")){
         for (let i=0;i<imgs.length;i++){

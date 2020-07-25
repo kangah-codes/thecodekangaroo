@@ -22,16 +22,15 @@ if (subscribe) {
 
 function changeLogo(){
     var imgs = document.getElementsByClassName('site-logo')
-    console.log(imgs.length)
     var element = document.body;
     if (element.classList.contains("global-hash-dark-version")){
         for (let i=0;i<imgs.length;i++){
-            imgs[i].src = "http://"+window.location.hostname+":5000/static/img/logo-white.png"
+            imgs[i].src = "http://"+window.location.hostname+"/static/img/logo-white.png"
         }
         
     }else{
         for (let i=0;i<imgs.length;i++){
-            imgs[i].src = "http://"+window.location.hostname+":5000/static/img/logo-dark.png"
+            imgs[i].src = "http://"+window.location.hostname+"/static/img/logo-dark.png"
         }
     }
 }
