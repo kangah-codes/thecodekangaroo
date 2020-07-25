@@ -78,3 +78,8 @@ def post(request, post_slug):
         "link": 'http://'+request.META['HTTP_HOST']
     } 
     return render(request, 'post.html', context)
+
+def handler404(request):
+    return render(request, '404.html')
+
+

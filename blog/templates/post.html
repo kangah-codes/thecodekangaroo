@@ -107,7 +107,7 @@
                 <div class="post-share">
                     <a
                         class="twitter"
-                        href="https://twitter.com/intent/tweet?text=You%20must%20grow%20like%20a%20tree&amp;url={{ link }}/{{ post.slug }}"
+                        href="https://twitter.com/intent/tweet?text={{ post.title }}&amp;url={{ link }}/blog/post/{{ post.slug }}"
                         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
                     >
                         <svg class="global-svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +118,7 @@
                     </a>
                     <a
                         class="facebook"
-                        href="https://www.facebook.com/sharer/sharer.php?u={{ link }}/{{ post.slug }}"
+                        href="https://www.facebook.com/sharer/sharer.php?u={{ link }}/blog/post/{{ post.slug }}"
                         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
                     >
                         <svg class="global-svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +127,7 @@
                             />
                         </svg>
                     </a>
-                    <a class="copy" id="copy" data-clipboard-target="{{ link }}/{{ post.slug }}">
+                    <a class="copy" id="copy" data-clipboard-target="{{ link }}/blog/post/{{ post.slug }}">
                         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M20.33 13.04h-4.155v4.154h-2.078v-4.155H9.942v-2.077h4.155V6.806h2.078v4.156h4.154v2.077zM8.902 18.58a6.582 6.582 0 0 1 0-13.162c.068 0 .135.007.202.009a8.874 8.874 0 0 0-.001 13.144c-.067 0-.133.009-.2.009zm6.194-15.484a8.876 8.876 0 0 0-3.087.56A8.904 8.904 0 0 0 0 12a8.903 8.903 0 0 0 8.903 8.905 8.893 8.893 0 0 0 3.103-.563 8.854 8.854 0 0 0 3.09.563A8.903 8.903 0 0 0 24 12a8.904 8.904 0 0 0-8.903-8.903z"
