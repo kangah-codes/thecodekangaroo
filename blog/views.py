@@ -12,14 +12,12 @@ from django.http import JsonResponse
 
 # Create your views here.
 def index(request):
-    posts = BlogPost.objects.filter(is_featured=False)
-    featured = BlogPost.objects.filter(is_featured=True)
+    posts = BlogPost.objects.filter(is_featured=False, status='PB')
+    featured = BlogPost.objects.filter(is_featured=True, status='PB')
     paginator = Paginator(posts, 8)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    for post in posts:
-        print(post.banner)
     context = {
         "posts": page_obj,
         "featured": featured,
