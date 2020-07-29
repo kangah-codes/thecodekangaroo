@@ -22,13 +22,15 @@ def index(request):
         "posts": page_obj,
         "featured": featured,
         "tags": Tag.objects.all(),
-        "ban": posts[0].banner
+        "ban": posts[0].banner,
+        "showNews": True
     }
     return render(request, 'index.html', context)
 
 def tags(request):
     context = {
-        "tags": Tag.objects.all()
+        "tags": Tag.objects.all(),
+        "showNews": True
     }
     return render(request, 'tags.html', context)
 
@@ -36,13 +38,15 @@ def tag_posts(request, obj):
     tagObj = Tag.objects.get(text=obj)
     context = {
         'posts': BlogPost.objects.filter(tags__text=obj),
-        "tags": Tag.objects.all()
+        "tags": Tag.objects.all(),
+        "showNews": True
     }
     return render(request, 'index.html', context)
 
 def author(request):
     context = {
-        "tags": Tag.objects.all()
+        "tags": Tag.objects.all(),
+        "showNews": True
     }
     return render(request, 'author.html')
 
@@ -51,7 +55,7 @@ def search_query(request):
     search_fields = ['^title', 'content']
 
     if request.method == "POST":
-        posts = BlogPost.objects.filter(search_filter(search_fields, request.POST.get('query')))
+        posts = BlogPost.objects.filter(search_filter(search_fields, request.POST.get('query')), status='PB')
         if len(posts) == 0:
             return HttpResponse(400)
         data = {}
@@ -73,11 +77,13 @@ def post(request, post_slug):
     context = {
         "post": BlogPost.objects.get(slug=post_slug),
         "tags": Tag.objects.all(),
-        "link": 'http://'+request.META['HTTP_HOST']
+        "link": 'http://'+request.META['HTTP_HOST'],
+        "showNews": True
     } 
     return render(request, 'post.html', context)
 
 def handler404(request):
     return render(request, '404.html')
 
-
+def handler500(request):
+    return render(request, '500.html', {"showNews":False})

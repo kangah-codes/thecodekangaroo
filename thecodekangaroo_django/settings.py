@@ -25,7 +25,15 @@ SECRET_KEY = 'fbwb0dd!psns%mo5td3cf5aaegs$@%%3&ypxl50p@-p=aw=w&4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'https://thecodekangaroo-blog.uc.r.appspot.com',
+    'http://thecodekangaroo-blog.uc.r.appspot.com',
+    'http://www.thecodekangaroo.com',
+    'http://thecodekangaroo.com',
+    'https://www.thecodekangaroo.com',
+    'https://thecodekangaroo.com'
+]
 
 
 # Application definition

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>An error occured</title>
+{% endblock %}
+
+{% block content %}
+    <div class="section-error flex">
+        <div class="error-wrap">
+            <h2>500</h2>
+            <p>Our engineers have been alerted</p>
+            <a href="/" class="error-back-button global-button">Back to Homepage</a>
+        </div>
+    </div>
+{% endblock %}

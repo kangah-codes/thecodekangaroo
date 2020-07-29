@@ -98,36 +98,38 @@
                 </div>
                 {% block content %}
                 {% endblock %}
-                <div class="section-subscribe wrap" id="subscribe">
-                    <div class="subscribe-wrap">
-                        <h3>Join our occasional newsletter</h3>
-                        <div class="ityped">
-                            <span class="ityped-wrap"></span>
-                            <span class="ityped-sub" style="display: none;"></span>
-                        </div>
-                        <input class="confirm" type="hidden" name="confirm" /><input class="location" type="hidden" name="location" /><input class="referrer" type="hidden" name="referrer" />
-                        <div class="form-group">
-                            <input class="subscribe-email" type="email" name="email" placeholder="Your email address" id="subscribe-input" />
-                        </div>
-                        <button class="subscribe-click"><span>Subscribe</span></button>
+                {% if showNews %}
+                    <div class="section-subscribe wrap" id="subscribe">
+                        <div class="subscribe-wrap">
+                            <h3>Join our occasional newsletter</h3>
+                            <div class="ityped">
+                                <span class="ityped-wrap"></span>
+                                <span class="ityped-sub" style="display: none;"></span>
+                            </div>
+                            <input class="confirm" type="hidden" name="confirm" /><input class="location" type="hidden" name="location" /><input class="referrer" type="hidden" name="referrer" />
+                            <div class="form-group">
+                                <input class="subscribe-email" type="email" name="email" placeholder="Your email address" id="subscribe-input" />
+                            </div>
+                            <button class="subscribe-click"><span>Subscribe</span></button>
 
-                        <script>
-                            (function (g, h, o, s, t) {
-                                var buster = function (b, m) {
-                                    h[o]("input." + b).forEach(function (i) {
-                                        i.value = i.value || m;
-                                    });
-                                };
-                                buster("location", g.location.href);
-                                buster("referrer", h.referrer);
-                            })(window, document, "querySelectorAll", "value");
-                        </script>
+                            <script>
+                                (function (g, h, o, s, t) {
+                                    var buster = function (b, m) {
+                                        h[o]("input." + b).forEach(function (i) {
+                                            i.value = i.value || m;
+                                        });
+                                    };
+                                    buster("location", g.location.href);
+                                    buster("referrer", h.referrer);
+                                })(window, document, "querySelectorAll", "value");
+                            </script>
 
-                        <script>
-                            document.getElementById("subscribe-input").setAttribute("aria-label", "Your email address");
-                        </script>
+                            <script>
+                                document.getElementById("subscribe-input").setAttribute("aria-label", "Your email address");
+                            </script>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             </div>
             <footer class="section-footer">
                 <div class="footer-wrap wrap flex">
