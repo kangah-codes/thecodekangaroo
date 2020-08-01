@@ -26,13 +26,8 @@ SECRET_KEY = 'fbwb0dd!psns%mo5td3cf5aaegs$@%%3&ypxl50p@-p=aw=w&4'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'https://thecodekangaroo-blog.uc.r.appspot.com',
-    'http://thecodekangaroo-blog.uc.r.appspot.com',
-    'http://www.thecodekangaroo.com',
-    'http://thecodekangaroo.com',
-    'https://www.thecodekangaroo.com',
-    'https://thecodekangaroo.com'
+    '.thecodekangaroo.com',
+    '127.0.0.1'
 ]
 
 
@@ -49,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'django.contrib.sitemaps'
 ]
 
 MIDDLEWARE = [
@@ -178,5 +174,16 @@ JET_DEFAULT_THEME = 'light-green'
 JET_PROJECT = 'blog'
 
 CACHE_MIDDLEWARE_ALIAS = "default"
-CACHE_MIDDLEWARE_SECONDS = 0.5
+CACHE_MIDDLEWARE_SECONDS = 120
 CACHE_MIDDLEWARE_KEY_PREFIX = ''
+
+
+#SSL
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+else:
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_SSL_REDIRECT = False

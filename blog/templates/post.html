@@ -10,7 +10,7 @@
     <meta name="keywords" content="{% for tag in post.tags.all %}{{ tag.text }}, {% endfor %}">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ post.title }}">
-    <meta property="og:image" content="{{ post.banner.url }}">
+    <meta property="og:image" content="{{ post.banner }}">
     <meta property="og:updated_time" content="{{ post.last_modified_date }}">
     <meta property="og:url" content="{{ request.url }}">
     <meta property="og:site_name" content="The Code Kangaroo">
@@ -155,4 +155,8 @@
                 
         </div>
     </div>
+{% endblock %}
+
+{% block addscript %}
+    <script src="{% static 'js/post.js' %}"></script>
 {% endblock %}

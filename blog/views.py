@@ -37,7 +37,7 @@ def tags(request):
 def tag_posts(request, obj):
     tagObj = Tag.objects.get(text=obj)
     context = {
-        'posts': BlogPost.objects.filter(tags__text=obj),
+        'posts': BlogPost.objects.filter(tags__text=obj, status="PB"),
         "tags": Tag.objects.all(),
         "showNews": True
     }
@@ -82,8 +82,12 @@ def post(request, post_slug):
     } 
     return render(request, 'post.html', context)
 
-def handler404(request):
-    return render(request, '404.html')
+def handler404(request, *args, **argv):
+    response = render(request, '404.html')
+    response.status_code = 404
+    return response
 
-def handler500(request):
-    return render(request, '500.html', {"showNews":False})
+def handler500(request, *args, **argv):
+    response = render(request, '500.html', {"showNews":False})
+    response.status_code = 500
+    return response
