@@ -12,8 +12,8 @@ from django.http import JsonResponse
 
 # Create your views here.
 def index(request):
-    posts = BlogPost.objects.filter(is_featured=False, status='PB')
-    featured = BlogPost.objects.filter(is_featured=True, status='PB')
+    posts = BlogPost.objects.filter(is_featured=False)
+    featured = BlogPost.objects.filter(is_featured=True)
     paginator = Paginator(posts, 8)
 
     page_number = request.GET.get('page')
@@ -37,7 +37,7 @@ def tags(request):
 def tag_posts(request, obj):
     tagObj = Tag.objects.get(text=obj)
     context = {
-        'posts': BlogPost.objects.filter(tags__text=obj, status="PB"),
+        'posts': BlogPost.objects.filter(tags__text=obj),
         "tags": Tag.objects.all(),
         "showNews": True
     }
@@ -55,7 +55,7 @@ def search_query(request):
     search_fields = ['^title', 'content']
 
     if request.method == "POST":
-        posts = BlogPost.objects.filter(search_filter(search_fields, request.POST.get('query')), status='PB')
+        posts = BlogPost.objects.filter(search_filter(search_fields, request.POST.get('query')))
         if len(posts) == 0:
             return HttpResponse(400)
         data = {}
