@@ -9,9 +9,10 @@
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Thoughts, stories and ideas" />
-        <link rel="canonical" href="http://www.thecodekangaroo.com" />
+        <meta name="description" content="Thoughts, stories and ideas of a lone coder" />
+        <link rel="canonical" href="https://www.thecodekangaroo.com" />
         <meta name="referrer" content="no-referrer-when-downgrade" />
+        <meta name="keywords" content="Joshua Akangah, Code Kangaroo, Blog, Programming, Python, The Code Kangaroo" />
         <meta property="og:site_name" content="The Code Kangaroo" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="The Code Kangaroo" />
@@ -99,36 +100,38 @@
                 </div>
                 {% block content %}
                 {% endblock %}
-                <div class="section-subscribe wrap" id="subscribe">
-                    <div class="subscribe-wrap">
-                        <h3>Join our occasional newsletter</h3>
-                        <div class="ityped">
-                            <span class="ityped-wrap"></span>
-                            <span class="ityped-sub" style="display: none;"></span>
-                        </div>
-                        <input class="confirm" type="hidden" name="confirm" /><input class="location" type="hidden" name="location" /><input class="referrer" type="hidden" name="referrer" />
-                        <div class="form-group">
-                            <input class="subscribe-email" type="email" name="email" placeholder="Your email address" id="subscribe-input" />
-                        </div>
-                        <button class="subscribe-click"><span>Subscribe</span></button>
+                {% if showNews %}
+                    <!-- <div class="section-subscribe wrap" id="subscribe">
+                        <div class="subscribe-wrap">
+                            <h3>Join our occasional newsletter</h3>
+                            <div class="ityped">
+                                <span class="ityped-wrap"></span>
+                                <span class="ityped-sub" style="display: none;"></span>
+                            </div>
+                            <input class="confirm" type="hidden" name="confirm" /><input class="location" type="hidden" name="location" /><input class="referrer" type="hidden" name="referrer" />
+                            <div class="form-group">
+                                <input class="subscribe-email" type="email" name="email" placeholder="Your email address" id="subscribe-input" />
+                            </div>
+                            <button class="subscribe-click"><span>Subscribe</span></button>
 
-                        <script>
-                            (function (g, h, o, s, t) {
-                                var buster = function (b, m) {
-                                    h[o]("input." + b).forEach(function (i) {
-                                        i.value = i.value || m;
-                                    });
-                                };
-                                buster("location", g.location.href);
-                                buster("referrer", h.referrer);
-                            })(window, document, "querySelectorAll", "value");
-                        </script>
+                            <script>
+                                (function (g, h, o, s, t) {
+                                    var buster = function (b, m) {
+                                        h[o]("input." + b).forEach(function (i) {
+                                            i.value = i.value || m;
+                                        });
+                                    };
+                                    buster("location", g.location.href);
+                                    buster("referrer", h.referrer);
+                                })(window, document, "querySelectorAll", "value");
+                            </script>
 
-                        <script>
-                            document.getElementById("subscribe-input").setAttribute("aria-label", "Your email address");
-                        </script>
-                    </div>
-                </div>
+                            <script>
+                                document.getElementById("subscribe-input").setAttribute("aria-label", "Your email address");
+                            </script>
+                        </div>
+                    </div> -->
+                {% endif %}
             </div>
             <footer class="section-footer">
                 <div class="footer-wrap wrap flex">
@@ -198,5 +201,7 @@
         <script src="{% static 'js/global.js' %}"></script>
         <script src="{% static 'js/theme.js' %}"></script>
         <script src="{% static 'js/search.js' %}"></script>
+        {% block addscript %}
+        {% endblock %}
     </body>
 </html>

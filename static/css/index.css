@@ -717,6 +717,12 @@ a:focus {
     color: var(--color-elements-three);
     background-color: var(--color-details) !important;
 }
+
+.tag-tag {
+    color: var(--color-bg-featured-label-mobile);
+    background-color: var(--color-featured-label-mobile);
+}
+
 .featured-wrap h1,
 .featured-wrap h2 {
     font-size: 54px;
@@ -3713,7 +3719,7 @@ iframe {
   z-index: 9999999;
   top: 0;
   left: 0;
-  background-color: #f6f9f9;
+  background-color: var(--color-body);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3733,6 +3739,7 @@ iframe {
   0% { opacity: 0; }
   100% { opacity: 1 }
 }
+
 .blink {
   -webkit-animation: blink 1s linear infinite;
   -moz-animation: blink 1s linear infinite;
@@ -3750,3 +3757,86 @@ iframe {
     margin: 0 0 -5px 5px;
     list-style: none;
 }
+
+.members-cta-blur {
+    position: relative;
+    height: 240px;
+    margin-bottom: -140px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: .8;
+    -webkit-filter: blur(6px);
+    filter: blur(6px);
+}
+
+.global-hash-cta-violet .members-cta, .section-prev-next .tag-hash-violet, .section-prev-next .tag-hash-violet .prev-next-image::before, .section-loop .tag-hash-violet article, .section-loop .tag-hash-violet .item-image::before, .tag-hash-post-violet .is-featured-image .featured-image::before, .tag-hash-post-violet .no-featured-image {
+    background-image: linear-gradient(20deg,var(--gradient-violet-start),var(--gradient-violet-end));
+}
+
+.global-hash-cta-violet .members-cta-white, .global-hash-cta-green .members-cta-white, .global-hash-cta-red .members-cta-white, .global-hash-cta-orange .members-cta-white, .global-hash-cta-yellow .members-cta-white, .global-hash-cta-blue .members-cta-white, .global-hash-cta-violet .members-cta-white small a:hover, .global-hash-cta-green .members-cta-white small a:hover, .global-hash-cta-red .members-cta-white small a:hover, .global-hash-cta-orange .members-cta-white small a:hover, .global-hash-cta-yellow .members-cta-white small a:hover, .global-hash-cta-blue .members-cta-white small a:hover {
+    color: var(--color-elements-white);
+}
+.members-cta {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    max-width: 620px;
+    margin: 40px auto 10vh;
+    padding: 40px 60px;
+    text-align: center;
+    border-radius: var(--border-radius-primary);
+    background-image: linear-gradient(20deg,var(--gradient-gray-start),var(--gradient-gray-end));
+    box-shadow: 0 0 60px 10px var(--color-body);
+}
+
+.global-hash-cta-violet .members-cta-white, .global-hash-cta-green .members-cta-white, .global-hash-cta-red .members-cta-white, .global-hash-cta-orange .members-cta-white, .global-hash-cta-yellow .members-cta-white, .global-hash-cta-blue .members-cta-white, .global-hash-cta-violet .members-cta-white small a:hover, .global-hash-cta-green .members-cta-white small a:hover, .global-hash-cta-red .members-cta-white small a:hover, .global-hash-cta-orange .members-cta-white small a:hover, .global-hash-cta-yellow .members-cta-white small a:hover, .global-hash-cta-blue .members-cta-white small a:hover {
+    color: var(--color-elements-white);
+}
+.members-cta-title {
+    font-size: 35px;
+    padding: 0 20px;
+}
+
+.members-cta p {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+.global-hash-cta-violet .members-cta-button, .global-hash-cta-green .members-cta-button, .global-hash-cta-red .members-cta-button, .global-hash-cta-orange .members-cta-button, .global-hash-cta-yellow .members-cta-button, .global-hash-cta-blue .members-cta-button {
+    background-color: var(--color-elements-white);
+}
+.global-hash-cta-violet .members-cta-button, .global-hash-cta-green .members-cta-button, .global-hash-cta-red .members-cta-button, .global-hash-cta-orange .members-cta-button, .global-hash-cta-yellow .members-cta-button, .global-hash-cta-blue .members-cta-button, .global-hash-cta-violet .members-cta-button:hover, .global-hash-cta-green .members-cta-button:hover, .global-hash-cta-red .members-cta-button:hover, .global-hash-cta-orange .members-cta-button:hover, .global-hash-cta-yellow .members-cta-button:hover, .global-hash-cta-blue .members-cta-button:hover {
+    color: var(--color-font-button);
+}
+.post-wrap a {
+    transition: all .2s ease;
+    border-bottom: 2px solid var(--color-underline-link);
+}
+.members-cta-button, .members-cta-button:hover {
+    color: var(--color-elements-white);
+}
+.members-cta-button {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.global-button {
+    font-size: 14px;
+    font-weight: var(--font-weight-primary-bold);
+    line-height: 1.15;
+    display: inline-block;
+    box-sizing: border-box;
+    height: auto;
+    margin: 5px 0 0 0;
+    padding: 25px 27px;
+    cursor: pointer;
+    transition: all .15s ease;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: var(--color-font-button);
+    border: 0!important;
+    border-radius: 50px;
+    outline: 0;
+    background-color: var(--color-elements-two);

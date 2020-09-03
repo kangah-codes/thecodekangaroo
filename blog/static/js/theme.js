@@ -8,6 +8,7 @@ $(window).on('load', function () {
         $(this).remove();
     });
 });
+
 var newsletter = ["Start your day with <thecodekangaroo/>", "No spam ever, we promise!", "Get notified when we post"]
 var subscribe = document.getElementById("subscribe");
 if (subscribe) {
@@ -25,12 +26,12 @@ function changeLogo(){
     var element = document.body;
     if (element.classList.contains("global-hash-dark-version")){
         for (let i=0;i<imgs.length;i++){
-            imgs[i].src = "http://"+window.location.hostname+"/static/img/logo-white.png"
+            imgs[i].src = "https://"+window.location.hostname+"/static/img/logo-white.png"
         }
         
     }else{
         for (let i=0;i<imgs.length;i++){
-            imgs[i].src = "http://"+window.location.hostname+"/static/img/logo-dark.png"
+            imgs[i].src = "https://"+window.location.hostname+"/static/img/logo-dark.png"
         }
     }
 }

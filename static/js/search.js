@@ -21,14 +21,15 @@ $(".search-input").on('keyup', () => {
             $('#search-counter').removeClass('hide')
             $('#search-counter').empty()
             $('.search-results').empty()
-            $("#search-counter").append(`<span class="counter-results">${Object.size(resp)}</span>
-                            Results for your search
+            $("#search-counter").append(`
+                <span class="counter-results">${Object.size(resp)}</span>
+                Results for your search
             `)
             for (var key in resp){
                 let title = resp[key]['title']
                 let date = resp[key]['date']
                 $('.search-results').append(`
-                    <a href="${"http://"+window.location.hostname+":5000/blog/post/"+key}">
+                    <a href="${"https://"+window.location.hostname+"/blog/post/"+key}">
                         <h4>${title}<span class="search-date">Published — ${date}</span></h4>
                     </a>
                 `)
@@ -41,7 +42,7 @@ $(".search-input").on('keyup', () => {
             $('#search-counter').empty()
             $("#search-counter").append(`
                 <span class="counter-results">0</span>
-                            Results for your search
+                Results for your search
             `)
             
         }
