@@ -29,7 +29,7 @@ $(".search-input").on('keyup', () => {
                 let title = resp[key]['title']
                 let date = resp[key]['date']
                 $('.search-results').append(`
-                    <a href="${"https://"+window.location.hostname+"/blog/post/"+key}">
+                    <a href="${"https://www.thecodekangaroo.com/blog/post/"+key}">
                         <h4>${title}<span class="search-date">Published — ${date}</span></h4>
                     </a>
                 `)
@@ -44,7 +44,7 @@ $(".search-input").on('keyup', () => {
                 <span class="counter-results">0</span>
                 Results for your search
             `)
-            
+
         }
     });
 })
@@ -75,7 +75,7 @@ $('.subscribe-click').on('click', () => {
                     backDelay: 5000,
                 });
             }
-            
+
         },
 
         // handle a non-successful response
@@ -91,7 +91,7 @@ $('.subscribe-click').on('click', () => {
                     backDelay: 5000,
                 });
             }
-            
+
         }
     });
     setTimeout(() => {
