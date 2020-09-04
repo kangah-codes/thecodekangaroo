@@ -92,6 +92,11 @@ DATABASES = {
         'NAME': 'dc7cd0ddprv5mi',
         'USER': 'gicxrcblyllfjp',
         'PASSWORD': 'caaf0441f89e675106e05520561e95a4c125315ee2e5aa305fef450d747510c1',
+    },
+
+    'test': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
