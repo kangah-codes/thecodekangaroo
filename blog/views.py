@@ -77,7 +77,7 @@ def post(request, post_slug):
     context = {
         "post": BlogPost.objects.get(slug=post_slug),
         "tags": Tag.objects.all(),
-        "link": 'http://'+request.META['HTTP_HOST'],
+        "link": 'https://'+request.META['HTTP_HOST'],
         "showNews": True
     } 
     return render(request, 'post.html', context)
